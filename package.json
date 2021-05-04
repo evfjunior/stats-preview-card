@@ -1,0 +1,47 @@
+{
+  "name": "stats-preview-card",
+  "version": "1.0.0",
+  "main": "src/index.html",
+  "scripts": {
+    "compile-watch": "sass src/app/scss/main.scss src/dist/styles/main.css --watch",
+    "compile-css": "sass src/app/scss/main.scss src/dist/styles/main.css",
+    "server": "lite-server --baseDir=\"src\"",
+    "prefix-css": "postcss --replace src/dist/styles/main.css --use autoprefixer --map",
+    "purge-css": "purgecss --css src/dist/styles/main.css --content src/index.html --output src/dist/styles/",
+    "build-css": "npm-run-all compile-css prefix-css",
+    "dev": "npm-run-all --parallel compile-watch server",
+    "build": "npm-run-all build-css purge-css",
+    "start": "npm-run-all build server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evfjunior/stats-preview-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evfjunior/stats-preview-card/issues"
+  },
+  "keywords": [
+    "frontend",
+    "mentor",
+    "challenge",
+    "stats",
+    "card",
+    "web",
+    "development",
+    "html",
+    "sass",
+    "javascript"
+  ],
+  "homepage": "https://github.com/evfjunior/stats-preview-card  #readme",
+  "author": "evfjunior",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "lite-server": "^2.6.1",
+    "postcss": "^8.2.13",
+    "postcss-cli": "^8.3.1",
+    "purgecss": "^4.0.3",
+    "sass": "^1.32.12",
+    "yarn-run-all": "^3.1.1"
+  }
+}
