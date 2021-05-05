@@ -8,7 +8,15 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: $black;
+  background-color: $blue-midnight;
+  font-family: "Lexend Deca", sans-serif;
   font-size: 100%;
-  color: $white;
+  font-weight: 400;
+  color: $white-alpha-75;
+}
+
+h2 {
+  font-family: "Inter";
+  font-weight: 700;
+  color: $white-solid;
 }
