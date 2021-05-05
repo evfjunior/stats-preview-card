@@ -1,6 +1,9 @@
 .card {
-  background-color: $blue-storm;
+  margin: auto;
+  width: 100%;
   border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: $blue-storm;
 
   &__image {
     position: relative;
@@ -13,8 +16,6 @@
       img {
         width: 100%;
         height: auto;
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
       }
     }
 
@@ -69,6 +70,61 @@
         color: $white-alpha-60;
 
         @include letter-spacing(0.125rem);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 28rem;
+    max-width: 69.5rem;
+
+    &__image {
+      order: 2;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      order: 1;
+      margin: 0 4rem;
+      padding: 0;
+      max-width: 24rem;
+      text-align: left;
+    }
+
+    &__text {
+      h2 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    &__stats-box {
+      display: flex;
+      justify-content: space-between;
+
+      .stats-item {
+        &:not(:last-child) {
+          margin-bottom: 0;
+          margin-right: 4rem;
+        }
       }
     }
   }
