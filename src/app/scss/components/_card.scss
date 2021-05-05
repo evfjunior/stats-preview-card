@@ -1,17 +1,22 @@
 .card {
-  padding-bottom: 1.5rem;
-  border-radius: 0.5rem;
   background-color: $blue-storm;
-
-  picture {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  border-radius: 0.5rem;
 
   &__image {
     position: relative;
-    width: 100%;
+
+    picture {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+    }
 
     &::after {
       position: absolute;
@@ -19,29 +24,20 @@
       right: 0;
       bottom: 0;
       left: 0;
-      height: auto;
-      width: 100%;
       content: "";
       background-color: hsla(278, 100%, 30%, 0.55);
     }
+  }
 
-    img {
-      width: 100%;
-      height: auto;
-      border-top-left-radius: 0.4rem;
-      border-top-right-radius: 0.4rem;
-    }
+  &__content {
+    padding: 2.5rem 1.75rem;
+    text-align: center;
   }
 
   &__text {
-    margin: 0 2rem;
-    text-align: center;
-
-    h2 {
-      font-size: 1.75rem;
-    }
-
     p {
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
       font-size: 0.9375rem;
       line-height: 1.5rem;
       color: $white-alpha-60;
@@ -49,35 +45,31 @@
   }
 
   &__stats-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
+    font-family: "Inter";
 
     .stats-item {
-      display: inline-block;
-      margin: 1rem;
+      &:not(:last-child) {
+        margin-bottom: 1.75rem;
+      }
 
       span {
         display: block;
       }
-    }
 
-    .stats-number {
-      margin-bottom: 0.5rem;
-      font-family: "Inter";
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: $white-solid;
-    }
+      .stats-number {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $white-solid;
+      }
 
-    .stats-text {
-      font-family: 'Inter';
-      font-size: 0.625rem;
-      text-transform: uppercase;
-      color: $white-alpha-60;
+      .stats-text {
+        font-size: 0.625rem;
+        text-transform: uppercase;
+        color: $white-alpha-60;
 
-      @include letter-spacing(0.125rem)
+        @include letter-spacing(0.125rem);
+      }
     }
   }
 }
